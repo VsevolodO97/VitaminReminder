@@ -10,9 +10,10 @@
 		F14C4A9E29E886BC003DDE33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14C4A9D29E886BC003DDE33 /* AppDelegate.swift */; };
 		F14C4AA029E886BC003DDE33 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14C4A9F29E886BC003DDE33 /* SceneDelegate.swift */; };
 		F14C4AA229E886BC003DDE33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14C4AA129E886BC003DDE33 /* ViewController.swift */; };
-		F14C4AA529E886BC003DDE33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F14C4AA329E886BC003DDE33 /* Main.storyboard */; };
 		F14C4AA729E886BE003DDE33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F14C4AA629E886BE003DDE33 /* Assets.xcassets */; };
 		F14C4AAA29E886BE003DDE33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F14C4AA829E886BE003DDE33 /* LaunchScreen.storyboard */; };
+		F14C4AB229E886ED003DDE33 /* Vitamin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14C4AB129E886ED003DDE33 /* Vitamin.swift */; };
+		F14C4AB429E88718003DDE33 /* VitaminDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14C4AB329E88718003DDE33 /* VitaminDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +21,11 @@
 		F14C4A9D29E886BC003DDE33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F14C4A9F29E886BC003DDE33 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F14C4AA129E886BC003DDE33 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F14C4AA429E886BC003DDE33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F14C4AA629E886BE003DDE33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F14C4AA929E886BE003DDE33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F14C4AAB29E886BE003DDE33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F14C4AB129E886ED003DDE33 /* Vitamin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vitamin.swift; sourceTree = "<group>"; };
+		F14C4AB329E88718003DDE33 /* VitaminDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaminDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +60,9 @@
 			children = (
 				F14C4A9D29E886BC003DDE33 /* AppDelegate.swift */,
 				F14C4A9F29E886BC003DDE33 /* SceneDelegate.swift */,
+				F14C4AB129E886ED003DDE33 /* Vitamin.swift */,
 				F14C4AA129E886BC003DDE33 /* ViewController.swift */,
-				F14C4AA329E886BC003DDE33 /* Main.storyboard */,
+				F14C4AB329E88718003DDE33 /* VitaminDetailViewController.swift */,
 				F14C4AA629E886BE003DDE33 /* Assets.xcassets */,
 				F14C4AA829E886BE003DDE33 /* LaunchScreen.storyboard */,
 				F14C4AAB29E886BE003DDE33 /* Info.plist */,
@@ -127,7 +130,6 @@
 			files = (
 				F14C4AAA29E886BE003DDE33 /* LaunchScreen.storyboard in Resources */,
 				F14C4AA729E886BE003DDE33 /* Assets.xcassets in Resources */,
-				F14C4AA529E886BC003DDE33 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +140,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F14C4AB229E886ED003DDE33 /* Vitamin.swift in Sources */,
+				F14C4AB429E88718003DDE33 /* VitaminDetailViewController.swift in Sources */,
 				F14C4AA229E886BC003DDE33 /* ViewController.swift in Sources */,
 				F14C4A9E29E886BC003DDE33 /* AppDelegate.swift in Sources */,
 				F14C4AA029E886BC003DDE33 /* SceneDelegate.swift in Sources */,
@@ -147,14 +151,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F14C4AA329E886BC003DDE33 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F14C4AA429E886BC003DDE33 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F14C4AA829E886BE003DDE33 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,7 +288,6 @@
 				INFOPLIST_FILE = VitaminReminder/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,7 +315,6 @@
 				INFOPLIST_FILE = VitaminReminder/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
