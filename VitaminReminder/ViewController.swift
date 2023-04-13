@@ -2,11 +2,10 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    private let vitamins: [Vitamin] = [
+    private var vitamins: [Vitamin] = [
         Vitamin(name: "Vitamin A", description: "Vitamin A is important for normal vision, the immune system, and reproduction.", optimalTime: "Morning", dosage: "900 mcg for men, 700 mcg for women"),
         Vitamin(name: "Vitamin C", description: "Vitamin C is important for the growth and repair of body tissues.", optimalTime: "Morning", dosage: "90 mg for men, 75 mg for women"),
-        Vitamin(name: "Vitamin D", description: "Vitamin D helps your body absorb calcium, which is needed for strong bones.", optimalTime: "Morning", dosage: "20 mcg (800 IU)"),
-        Vitamin(name: "Vitamin E", description: "Vitamin E acts as an antioxidant, helping to protect cells from damage caused by free radicals.", optimalTime: "Evening", dosage: "15 mg")
+        Vitamin(name: "Vitamin D", description: "Vitamin D helps your body absorb calcium, which is needed for strong bones.", optimalTime: "Morning", dosage: "20 mcg (800 IU)")
     ]
 
     private let tableView: UITableView = {
@@ -19,12 +18,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         title = "Vitamins"
         view.backgroundColor = .white
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
 
         tableView.dataSource = self
         tableView.delegate = self
         view.addSubview(tableView)
 
         setupTableViewConstraints()
+    }
+
+    @objc private func addButtonTapped() {
+        let addEditVitaminViewController = AddEditVitaminViewController()
+        addEditVitaminViewController.onSave = { [weak self] newVitamin in
+            self?.vitamins.append(newVitamin)
+            self?.tableView.reloadData()
+        }
+        navigationController?.pushViewController(addEditVitaminViewController, animated: true)
     }
 
     private func setupTableViewConstraints() {
@@ -51,7 +60,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.deselectRow(at: indexPath, animated: true)
 
         let selectedVitamin = vitamins[indexPath.row]
-        let detailViewController = VitaminDetailViewController(vitamin: selectedVitamin)
-        navigationController?.pushViewController(detailViewController, animated: true)
+        let addEditVitaminViewController = AddEditVitaminViewController()
+        addEditVitaminViewController.vitamin = selectedVitamin
+        addEditVitaminViewController.onSave = { [weak self] editedVitamin in
+            self?.vitamins[indexPath.row] = editedVitamin
+            self?.tableView.reloadData()
+        }
+        navigationController?.pushViewController(addEditVitaminViewController, animated: true)
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            vitamins.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
     }
 }
