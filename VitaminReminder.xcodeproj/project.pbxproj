@@ -15,6 +15,7 @@
 		F14C4AB229E886ED003DDE33 /* Vitamin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14C4AB129E886ED003DDE33 /* Vitamin.swift */; };
 		F14C4AB429E88718003DDE33 /* VitaminDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14C4AB329E88718003DDE33 /* VitaminDetailViewController.swift */; };
 		F14C4AD629E898CA003DDE33 /* AddEditVitaminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14C4AD529E898CA003DDE33 /* AddEditVitaminViewController.swift */; };
+		F14C4AD829E89D3B003DDE33 /* VitaminTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14C4AD729E89D3B003DDE33 /* VitaminTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		F14C4AB129E886ED003DDE33 /* Vitamin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vitamin.swift; sourceTree = "<group>"; };
 		F14C4AB329E88718003DDE33 /* VitaminDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaminDetailViewController.swift; sourceTree = "<group>"; };
 		F14C4AD529E898CA003DDE33 /* AddEditVitaminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditVitaminViewController.swift; sourceTree = "<group>"; };
+		F14C4AD729E89D3B003DDE33 /* VitaminTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaminTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				F14C4A9D29E886BC003DDE33 /* AppDelegate.swift */,
+				F14C4AD729E89D3B003DDE33 /* VitaminTableViewCell.swift */,
 				F14C4A9F29E886BC003DDE33 /* SceneDelegate.swift */,
 				F14C4AB129E886ED003DDE33 /* Vitamin.swift */,
 				F14C4AD529E898CA003DDE33 /* AddEditVitaminViewController.swift */,
@@ -145,6 +148,7 @@
 			files = (
 				F14C4AB229E886ED003DDE33 /* Vitamin.swift in Sources */,
 				F14C4AB429E88718003DDE33 /* VitaminDetailViewController.swift in Sources */,
+				F14C4AD829E89D3B003DDE33 /* VitaminTableViewCell.swift in Sources */,
 				F14C4AA229E886BC003DDE33 /* ViewController.swift in Sources */,
 				F14C4AD629E898CA003DDE33 /* AddEditVitaminViewController.swift in Sources */,
 				F14C4A9E29E886BC003DDE33 /* AppDelegate.swift in Sources */,

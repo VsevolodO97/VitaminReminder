@@ -16,12 +16,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Customize navigation bar appearance
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.backgroundColor = UIColor.black
+        navigationBarAppearance.titleTextAttributes = [
+            .foregroundColor: UIColor.white,
+            .font: UIFont.systemFont(ofSize: 18, weight: .medium)
+        ]
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
+        navigationController?.navigationBar.standardAppearance = navigationBarAppearance
+        navigationController?.navigationBar.tintColor = UIColor.white
         title = "Vitamins"
         view.backgroundColor = .white
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
 
+        tableView.register(VitaminTableViewCell.self, forCellReuseIdentifier: VitaminTableViewCell.reuseIdentifier)
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 60
+        tableView.tableFooterView = UIView()
         view.addSubview(tableView)
 
         setupTableViewConstraints()
@@ -51,8 +66,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = vitamins[indexPath.row].name
+        let cell = tableView.dequeueReusableCell(withIdentifier: VitaminTableViewCell.reuseIdentifier, for: indexPath) as! VitaminTableViewCell
+        let vitamin = vitamins[indexPath.row]
+        cell.configure(with: vitamin)
         return cell
     }
 

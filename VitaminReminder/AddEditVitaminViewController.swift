@@ -52,15 +52,17 @@ class AddEditVitaminViewController: UIViewController {
     private func setupUI() {
         let stackView = UIStackView(arrangedSubviews: [nameTextField, descriptionTextField, optimalTimeTextField, dosageTextField, saveButton])
         stackView.axis = .vertical
-        stackView.spacing = 8
+        stackView.spacing = 16
+        stackView.alignment = .fill
+        stackView.distribution = .equalSpacing
 
         view.addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            stackView .trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16)
         ])
     }
 
