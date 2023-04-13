@@ -40,6 +40,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         view.addSubview(tableView)
 
         setupTableViewConstraints()
+        addDisclaimer()
     }
 
     @objc private func addButtonTapped() {
@@ -90,5 +91,29 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             vitamins.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
+    }
+    func addDisclaimer () {
+        // Add a footer view with a disclaimer
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 100))
+        let disclaimerLabel = UILabel()
+        disclaimerLabel.text = """
+            Information about each vitamin is not a medical advice. Please consult with a healthcare professional before starting any supplement regimen.
+            Note: Dosage and timing may vary depending on individual needs and health conditions. Consult with a doctor or a nutritionist before taking any vitamin or mineral supplements.
+        """
+
+        disclaimerLabel.numberOfLines = 0
+        disclaimerLabel.font = UIFont.systemFont(ofSize: 12)
+        disclaimerLabel.textColor = .darkGray
+        disclaimerLabel.textAlignment = .center
+
+        footerView.addSubview(disclaimerLabel)
+        disclaimerLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            disclaimerLabel.leadingAnchor.constraint(equalTo: footerView.leadingAnchor, constant: 16),
+            disclaimerLabel.trailingAnchor.constraint(equalTo: footerView.trailingAnchor, constant: -16),
+            disclaimerLabel.centerYAnchor.constraint(equalTo: footerView.centerYAnchor)
+        ])
+
+        tableView.tableFooterView = footerView
     }
 }

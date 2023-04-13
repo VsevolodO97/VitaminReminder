@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // In iOS 13, setup is done in the SceneDelegate.
         } else {
             let window = UIWindow(frame: UIScreen.main.bounds)
-            let mainViewController = ViewController()
-            let navigationController = UINavigationController(rootViewController: mainViewController)
+            let viewController = VitaminSelectionViewController()
+            let navigationController = UINavigationController(rootViewController: viewController)
 
             window.rootViewController = navigationController
             window.makeKeyAndVisible()

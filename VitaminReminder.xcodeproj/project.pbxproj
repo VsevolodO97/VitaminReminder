@@ -16,6 +16,7 @@
 		F14C4AB429E88718003DDE33 /* VitaminDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14C4AB329E88718003DDE33 /* VitaminDetailViewController.swift */; };
 		F14C4AD629E898CA003DDE33 /* AddEditVitaminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14C4AD529E898CA003DDE33 /* AddEditVitaminViewController.swift */; };
 		F14C4AD829E89D3B003DDE33 /* VitaminTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14C4AD729E89D3B003DDE33 /* VitaminTableViewCell.swift */; };
+		F14C4ADA29E8A8B7003DDE33 /* VitaminSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14C4AD929E8A8B7003DDE33 /* VitaminSelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		F14C4AB329E88718003DDE33 /* VitaminDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaminDetailViewController.swift; sourceTree = "<group>"; };
 		F14C4AD529E898CA003DDE33 /* AddEditVitaminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditVitaminViewController.swift; sourceTree = "<group>"; };
 		F14C4AD729E89D3B003DDE33 /* VitaminTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaminTableViewCell.swift; sourceTree = "<group>"; };
+		F14C4AD929E8A8B7003DDE33 /* VitaminSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitaminSelectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				F14C4AB129E886ED003DDE33 /* Vitamin.swift */,
 				F14C4AD529E898CA003DDE33 /* AddEditVitaminViewController.swift */,
 				F14C4AA129E886BC003DDE33 /* ViewController.swift */,
+				F14C4AD929E8A8B7003DDE33 /* VitaminSelectionViewController.swift */,
 				F14C4AB329E88718003DDE33 /* VitaminDetailViewController.swift */,
 				F14C4AA629E886BE003DDE33 /* Assets.xcassets */,
 				F14C4AA829E886BE003DDE33 /* LaunchScreen.storyboard */,
@@ -150,6 +153,7 @@
 				F14C4AB429E88718003DDE33 /* VitaminDetailViewController.swift in Sources */,
 				F14C4AD829E89D3B003DDE33 /* VitaminTableViewCell.swift in Sources */,
 				F14C4AA229E886BC003DDE33 /* ViewController.swift in Sources */,
+				F14C4ADA29E8A8B7003DDE33 /* VitaminSelectionViewController.swift in Sources */,
 				F14C4AD629E898CA003DDE33 /* AddEditVitaminViewController.swift in Sources */,
 				F14C4A9E29E886BC003DDE33 /* AppDelegate.swift in Sources */,
 				F14C4AA029E886BC003DDE33 /* SceneDelegate.swift in Sources */,
