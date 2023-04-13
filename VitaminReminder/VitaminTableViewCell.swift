@@ -35,7 +35,21 @@ class VitaminTableViewCell: UITableViewCell {
         contentView.addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
 
+        let backgroundView = UIView ()
+        backgroundView.backgroundColor = .white
+        backgroundView.layer.cornerRadius = 8
+        backgroundView.layer.borderWidth = 1
+        backgroundView.layer.borderColor = UIColor(white: 0.9, alpha: 1.0).cgColor
+        contentView.addSubview(backgroundView)
+        contentView.sendSubviewToBack(backgroundView)
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
+
         NSLayoutConstraint.activate([
+            backgroundView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+            backgroundView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+            backgroundView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            backgroundView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+
             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
