@@ -3,10 +3,18 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     private var vitamins: [Vitamin] = [
-        Vitamin(name: "Vitamin A", description: "Vitamin A is important for normal vision, the immune system, and reproduction.", optimalTime: "Morning", dosage: "900 mcg for men, 700 mcg for women"),
-        Vitamin(name: "Vitamin C", description: "Vitamin C is important for the growth and repair of body tissues.", optimalTime: "Morning", dosage: "90 mg for men, 75 mg for women"),
-        Vitamin(name: "Vitamin D", description: "Vitamin D helps your body absorb calcium, which is needed for strong bones.", optimalTime: "Morning", dosage: "20 mcg (800 IU)")
+        Vitamin(name: "Vitamin A", description: "Promotes healthy vision, skin, and immune system", optimalTime: "Morning with breakfast", dosage: "Men: 900 mcg, Women: 700 mcg", hasReminder: false, remindTime: nil),
+        Vitamin(name: "Vitamin C", description: "Boosts immune system, helps with iron absorption, promotes skin health", optimalTime: "Anytime of day", dosage: "Men: 90 mg, Women: 75 mg", hasReminder: false, remindTime: nil),
+        Vitamin(name: "Vitamin D", description: "Helps with bone health, immune system, and mood regulation", optimalTime: "Morning with breakfast", dosage: "Men and Women: 10-20 mcg", hasReminder: false, remindTime: nil),
+        Vitamin(name: "Vitamin E", description: "Promotes skin health, acts as an antioxidant", optimalTime: "Anytime of day", dosage: "Men and Women: 15 mg", hasReminder: false, remindTime: nil),
+        Vitamin(name: "Vitamin B12", description: "Helps with energy production, promotes healthy nerve and blood cells", optimalTime: "Morning with breakfast", dosage: "Men and Women: 2.4 mcg", hasReminder: false, remindTime: nil),
+        Vitamin(name: "Vitamin B6", description: "Helps with energy production, promotes healthy brain function and mood regulation", optimalTime: "Anytime of day", dosage: "Men: 1.3-1.7 mg, Women: 1.2-1.5 mg", hasReminder: false, remindTime: nil),
+        Vitamin(name: "Folic Acid", description: "Promotes healthy brain function and red blood cell production, reduces risk of birth defects during pregnancy", optimalTime: "Morning with breakfast", dosage: "Men and Women: 400 mcg", hasReminder: false, remindTime: nil),
+        Vitamin(name: "Calcium", description: "Promotes healthy bones and teeth, helps with muscle and nerve function", optimalTime: "Anytime of day", dosage: "Men: 1000 mg, Women: 1000-1200 mg", hasReminder: false, remindTime: nil),
+        Vitamin(name: "Iron", description: "Helps with red blood cell production, promotes healthy immune system", optimalTime: "Morning with breakfast", dosage: "Men: 8 mg, Women: 18 mg (19-50 years), 8 mg (51+ years)", hasReminder: false, remindTime: nil),
+        Vitamin(name: "Magnesium", description: "Helps with muscle and nerve function, promotes healthy heart rhythm and bone health", optimalTime: "Anytime of day", dosage: "Men: 400-420 mg, Women: 310-320 mg", hasReminder: false, remindTime: nil)
     ]
+
 
     private let tableView: UITableView = {
         let tableView = UITableView()

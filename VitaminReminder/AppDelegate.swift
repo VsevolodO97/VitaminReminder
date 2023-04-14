@@ -28,9 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window = window
         }
 
+        // Request notification authorization
+        ReminderManager.shared.requestNotificationAuthorization()
+
         return true
     }
-
 
     // MARK: UISceneSession Lifecycle
 

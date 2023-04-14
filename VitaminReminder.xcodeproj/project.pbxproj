@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F14BEC8829E9529E00984B07 /* ReminderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14BEC8729E9529E00984B07 /* ReminderManager.swift */; };
+		F14BEC8A29E952DE00984B07 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14BEC8929E952DE00984B07 /* Reminder.swift */; };
 		F14C4A9E29E886BC003DDE33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14C4A9D29E886BC003DDE33 /* AppDelegate.swift */; };
 		F14C4AA029E886BC003DDE33 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14C4A9F29E886BC003DDE33 /* SceneDelegate.swift */; };
 		F14C4AA229E886BC003DDE33 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14C4AA129E886BC003DDE33 /* ViewController.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F14BEC8729E9529E00984B07 /* ReminderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderManager.swift; sourceTree = "<group>"; };
+		F14BEC8929E952DE00984B07 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		F14C4A9A29E886BC003DDE33 /* VitaminReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VitaminReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F14C4A9D29E886BC003DDE33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F14C4A9F29E886BC003DDE33 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +69,8 @@
 			isa = PBXGroup;
 			children = (
 				F14C4A9D29E886BC003DDE33 /* AppDelegate.swift */,
+				F14BEC8729E9529E00984B07 /* ReminderManager.swift */,
+				F14BEC8929E952DE00984B07 /* Reminder.swift */,
 				F14C4AD729E89D3B003DDE33 /* VitaminTableViewCell.swift */,
 				F14C4A9F29E886BC003DDE33 /* SceneDelegate.swift */,
 				F14C4AB129E886ED003DDE33 /* Vitamin.swift */,
@@ -149,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F14BEC8829E9529E00984B07 /* ReminderManager.swift in Sources */,
 				F14C4AB229E886ED003DDE33 /* Vitamin.swift in Sources */,
 				F14C4AB429E88718003DDE33 /* VitaminDetailViewController.swift in Sources */,
 				F14C4AD829E89D3B003DDE33 /* VitaminTableViewCell.swift in Sources */,
@@ -157,6 +164,7 @@
 				F14C4AD629E898CA003DDE33 /* AddEditVitaminViewController.swift in Sources */,
 				F14C4A9E29E886BC003DDE33 /* AppDelegate.swift in Sources */,
 				F14C4AA029E886BC003DDE33 /* SceneDelegate.swift in Sources */,
+				F14BEC8A29E952DE00984B07 /* Reminder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

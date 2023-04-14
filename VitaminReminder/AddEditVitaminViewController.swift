@@ -39,6 +39,18 @@ class AddEditVitaminViewController: UIViewController {
         button.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
         return button
     }()
+    private let reminderSwitch: UISwitch = {
+        let reminderSwitch = UISwitch()
+        reminderSwitch.isOn = false
+        return reminderSwitch
+    }()
+
+    private let reminderDatePicker: UIDatePicker = {
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .time
+        datePicker.isHidden = true
+        return datePicker
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,8 +99,13 @@ class AddEditVitaminViewController: UIViewController {
             return
         }
 
-        let newVitamin = Vitamin(name: name, description: description, optimalTime: optimalTime, dosage: dosage)
+        let newVitamin = Vitamin(name: name, description: description, optimalTime: optimalTime, dosage: dosage, hasReminder: reminderSwitch.isOn)
         onSave?(newVitamin)
         navigationController?.popViewController(animated: true)
+
+        // Schedule or cancel the reminder
+        if reminderSwitch.isOn {
+            let reminder = Reminder(id: UUID(), vitamin: newVitamin, date: reminderDatePicker.date)
+        }
     }
 }

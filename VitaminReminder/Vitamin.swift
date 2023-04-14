@@ -7,10 +7,12 @@
 
 import Foundation
 
-struct Vitamin: Equatable {
+struct Vitamin {
     let name: String
     let description: String
     let optimalTime: String
     let dosage: String
+    var hasReminder: Bool
+    var remindTime: Date?
 }
 
