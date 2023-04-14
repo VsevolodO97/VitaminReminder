@@ -65,6 +65,13 @@ class AddEditVitaminViewController: UIViewController {
         fillFormIfEditing()
     }
 
+    @objc private func reminderSwitchChanged() {
+        if reminderSwitch.isOn {
+            reminderDatePicker.isHidden = false
+        } else {
+            reminderDatePicker.isHidden = true
+        }
+    }
 
     private func setupUI() {
         let stackView = UIStackView(arrangedSubviews: [nameTextField, descriptionTextView, optimalTimeTextField, dosageTextField, saveButton])
@@ -82,7 +89,9 @@ class AddEditVitaminViewController: UIViewController {
             stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16)
         ])
 
-        descriptionTextView.heightAnchor.constraint(equalToConstant: 100).isActive = true // Add this line
+        descriptionTextView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        reminderSwitch.addTarget(self, action: #selector(reminderSwitchChanged), for: .valueChanged)
+        // Add this line
     }
 
 
