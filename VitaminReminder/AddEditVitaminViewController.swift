@@ -67,6 +67,7 @@ class AddEditVitaminViewController: UIViewController {
         fillFormIfEditing()
     }
 
+
     private func setupUI() {
         let stackView = UIStackView(arrangedSubviews: [nameTextField, descriptionTextView, optimalTimeTextField, dosageTextField, saveButton])
         stackView.axis = .vertical
@@ -79,10 +80,13 @@ class AddEditVitaminViewController: UIViewController {
 
         NSLayoutConstraint.activate([
             stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            stackView .trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
             stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16)
         ])
+
+        descriptionTextView.heightAnchor.constraint(equalToConstant: 100).isActive = true // Add this line
     }
+
 
     private func fillFormIfEditing() {
         if let vitamin = vitamin {
