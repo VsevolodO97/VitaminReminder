@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import UserNotifications
+
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound]) { granted, error in
+            if granted {
+                print("Notification permission granted.")
+            } else {
+                print("Notification permission denied.")
+            }
+        }
 
         if #available(iOS 13.0, *) {
             // In iOS 13, setup is done in the SceneDelegate.
@@ -27,10 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             self.window = window
         }
-
         // Request notification authorization
         ReminderManager.shared.requestNotificationAuthorization()
-
+        UNUserNotificationCenter.current().delegate = self
         return true
     }
 
@@ -48,6 +57,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-
 }
 
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.banner, .sound])
+    }
+}

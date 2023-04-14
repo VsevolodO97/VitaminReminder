@@ -21,18 +21,20 @@ class ReminderManager {
         content.body = "It's time to take \(reminder.vitamin.name)!"
         content.sound = .default
 
-        let triggerDate = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: reminder.date)
-        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
+        let triggerDate = Calendar.current.dateComponents([.hour, .minute], from: reminder.date)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: true)
 
-        let request = UNNotificationRequest(identifier: reminder.id.uuidString, content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: reminder.vitamin.name, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
                 print("Error scheduling notification: \(error)")
+            } else {
+                print("Notification scheduled successfully for reminder with vitamin name: \(reminder.vitamin.name)")
             }
         }
     }
 
-    func cancelReminder(for id: UUID) {
-        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [id.uuidString])
+    func cancelReminder(for name: String) {
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [name])
     }
 }

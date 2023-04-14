@@ -29,8 +29,24 @@ class VitaminSelectionViewController: UITableViewController, VitaminCellDelegate
         ReminderManager.shared.requestNotificationAuthorization()
     }
     func vitaminCell(_ cell: VitaminTableViewCell, didUpdateSwitchState isOn: Bool) {
-        // Handle the reminder switch value change here
+        guard let indexPath = tableView.indexPath(for: cell) else {
+            print("Error: Unable to get index path for the selected cell.")
+            return
+        }
+
+        let vitamin = vitamins[indexPath.row]
+
+        if isOn {
+            let reminder = Reminder(id: UUID(), vitamin: vitamin, date: cell.datePicker.date)
+            ReminderManager.shared.scheduleReminder(reminder: reminder)
+            print("Scheduled reminder for vitamin: \(vitamin.name)")
+        } else {
+            ReminderManager.shared.cancelReminder(for: vitamin.name)
+            print("Canceled reminder for vitamin: \(vitamin.name)")
+        }
     }
+
+
 
     func vitaminCell(_ cell: VitaminTableViewCell, didUpdateDatePicker date: Date) {
         // Handle the reminder date change here
@@ -57,15 +73,15 @@ class VitaminSelectionViewController: UITableViewController, VitaminCellDelegate
         tableView.tableFooterView = footerView
     }
 
-        @objc func handleReminderSwitchChanged(_ sender: UISwitch) {
-            let index = sender.tag
-            vitamins[index].hasReminder = sender.isOn
-        }
+    @objc func handleReminderSwitchChanged(_ sender: UISwitch) {
+        let index = sender.tag
+        vitamins[index].hasReminder = sender.isOn
+    }
 
-        @objc func handleDatePickerValueChanged(_ sender: UIDatePicker) {
-            let index = sender.tag
-            vitamins[index].remindTime = sender.date
-        }
+    @objc func handleDatePickerValueChanged(_ sender: UIDatePicker) {
+        let index = sender.tag
+        vitamins[index].remindTime = sender.date
+    }
 
     // MARK: - Table view data source
 

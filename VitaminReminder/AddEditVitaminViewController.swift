@@ -17,12 +17,10 @@ class AddEditVitaminViewController: UIViewController {
         textView.layer.borderWidth = 1
         textView.layer.borderColor = UIColor.lightGray.cgColor
         textView.layer.cornerRadius = 5
-        textView.font = UIFont.systemFont(ofSize: 16)
-        textView.textColor = .black
-        textView.isEditable = false
-        textView.isScrollEnabled = true
+        textView.isScrollEnabled = false
         return textView
     }()
+
 
 
     private let optimalTimeTextField: UITextField = {
@@ -99,7 +97,7 @@ class AddEditVitaminViewController: UIViewController {
 
     @objc private func saveButtonTapped() {
         guard let name = nameTextField.text, !name.isEmpty,
-              let description = descriptionTextView.text, !description.isEmpty,
+              !descriptionTextView.text.isEmpty,
               let optimalTime = optimalTimeTextField.text, !optimalTime.isEmpty,
               let dosage = dosageTextField.text, !dosage.isEmpty
         else {
@@ -116,6 +114,8 @@ class AddEditVitaminViewController: UIViewController {
         // Schedule or cancel the reminder
         if reminderSwitch.isOn {
             let reminder = Reminder(id: UUID(), vitamin: newVitamin, date: reminderDatePicker.date)
+            print("Reminder created: \(reminder.date)")
+            ReminderManager.shared.scheduleReminder(reminder: reminder)
         }
     }
 }
