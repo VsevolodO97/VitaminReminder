@@ -3,6 +3,14 @@ import UIKit
 class VitaminDetailViewController: UIViewController {
 
     private let vitamin: Vitamin
+    private let vitaminInfoTextView: UITextView = {
+        let textView = UITextView()
+        textView.font = UIFont.systemFont(ofSize: 16)
+        textView.textColor = .black
+        textView.isEditable = false
+        textView.isScrollEnabled = true
+        return textView
+    }()
 
     init(vitamin: Vitamin) {
         self.vitamin = vitamin
@@ -22,22 +30,23 @@ class VitaminDetailViewController: UIViewController {
     }
 
     private func setupVitaminDetails() {
-        let vitaminInfo = UILabel()
-        vitaminInfo.numberOfLines = 0
-        vitaminInfo.text = """
+        vitaminInfoTextView.text = """
         Description: \(vitamin.description)
         Optimal Time: \(vitamin.optimalTime)
         Dosage: \(vitamin.dosage)
         """
 
-        view.addSubview(vitaminInfo)
+        view.addSubview(vitaminInfoTextView)
 
-        vitaminInfo.translatesAutoresizingMaskIntoConstraints = false
+        vitaminInfoTextView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            vitaminInfo.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            vitaminInfo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            vitaminInfo.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+            vitaminInfoTextView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            vitaminInfoTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            vitaminInfoTextView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            vitaminInfoTextView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
         ])
+        // Add this line to force the layout to update.
+        view.layoutIfNeeded()
     }
 }
 

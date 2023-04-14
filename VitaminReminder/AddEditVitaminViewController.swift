@@ -12,12 +12,18 @@ class AddEditVitaminViewController: UIViewController {
         return textField
     }()
 
-    private let descriptionTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "Description"
-        textField.borderStyle = .roundedRect
-        return textField
+    private let descriptionTextView: UITextView = {
+        let textView = UITextView()
+        textView.layer.borderWidth = 1
+        textView.layer.borderColor = UIColor.lightGray.cgColor
+        textView.layer.cornerRadius = 5
+        textView.font = UIFont.systemFont(ofSize: 16)
+        textView.textColor = .black
+        textView.isEditable = false
+        textView.isScrollEnabled = true
+        return textView
     }()
+
 
     private let optimalTimeTextField: UITextField = {
         let textField = UITextField()
@@ -62,7 +68,7 @@ class AddEditVitaminViewController: UIViewController {
     }
 
     private func setupUI() {
-        let stackView = UIStackView(arrangedSubviews: [nameTextField, descriptionTextField, optimalTimeTextField, dosageTextField, saveButton])
+        let stackView = UIStackView(arrangedSubviews: [nameTextField, descriptionTextView, optimalTimeTextField, dosageTextField, saveButton])
         stackView.axis = .vertical
         stackView.spacing = 16
         stackView.alignment = .fill
@@ -81,7 +87,7 @@ class AddEditVitaminViewController: UIViewController {
     private func fillFormIfEditing() {
         if let vitamin = vitamin {
             nameTextField.text = vitamin.name
-            descriptionTextField.text = vitamin.description
+            descriptionTextView.text = vitamin.description
             optimalTimeTextField.text = vitamin.optimalTime
             dosageTextField.text = vitamin.dosage
         }
@@ -89,7 +95,7 @@ class AddEditVitaminViewController: UIViewController {
 
     @objc private func saveButtonTapped() {
         guard let name = nameTextField.text, !name.isEmpty,
-              let description = descriptionTextField.text, !description.isEmpty,
+              let description = descriptionTextView.text, !description.isEmpty,
               let optimalTime = optimalTimeTextField.text, !optimalTime.isEmpty,
               let dosage = dosageTextField.text, !dosage.isEmpty
         else {
